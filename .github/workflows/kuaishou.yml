@@ -3,7 +3,7 @@ name: 快手视频签到
 on:
   workflow_dispatch:
   schedule:
-     - cron: '*/15 * * * *'
+     - cron: '1/20 10-23/3 * * *'
   watch:
     types: started
 jobs:
@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     env:
-        KS_TOKEN: ${{ secrets.KS_TOKEN }}
+        COOKIE_KS: ${{ secrets.COOKIE_KS }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -23,7 +23,7 @@ jobs:
         run: |
           npm install
       - name: 运行 【快手视频签到】
-        if: env.KS_TOKEN
+        if: env.COOKIE_KS
         run: |
           node Task/kuaishou.js
         env:
