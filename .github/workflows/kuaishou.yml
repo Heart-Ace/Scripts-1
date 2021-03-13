@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     env:
-        COOKIE_KS: ${{ secrets.COOKIE_KS }}
+        KS_TOKENS: ${{ secrets.KS_TOKENS }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -23,7 +23,7 @@ jobs:
         run: |
           npm install
       - name: 运行 【快手视频签到】
-        if: env.COOKIE_KS
+        if: env.KS_TOKENS
         run: |
           node Task/kuaishou.js
         env:
