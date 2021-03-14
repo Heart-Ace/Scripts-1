@@ -20,7 +20,7 @@ jobs:
                 node-version: '12.x'
             - name: Run
               run: npm install
-            - run: node cfz.js
+            - run: node Task/cfz.js
               env:
                 cfzurl: ${{ secrets.cfzurl }}
                 cfzhd: ${{ secrets.cfzhd }}
