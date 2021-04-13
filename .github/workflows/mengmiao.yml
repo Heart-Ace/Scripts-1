@@ -12,8 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     env:
-        MMDZZURL: ${{ secrets. MMDZZURL }}
-        MMDZZHD: ${{ secrets. MMDZZHD }}      
+        MMDZZ_URL: ${{ secrets. MMDZZ_URL }}
+        MMDZZ_HD: ${{ secrets. MMDZZ_HD }}      
         TZ: Asia/shanghai
     steps:
       - name: Checkout
