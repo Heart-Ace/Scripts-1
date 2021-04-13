@@ -1,10 +1,10 @@
-name: 春风赚
+name: 萌喵
 
 
 on:
   workflow_dispatch:
   schedule:
-     - cron: '12 0-3,17-23 * * *'
+     - cron: '2 0 * * *'
   watch:
     types: started
 jobs:
@@ -12,8 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     env:
-        CFZ_URL: ${{ secrets.CFZ_URL }}
-        CFZ_HD: ${{ secrets.CFZ_HD }}      
+        MMDZZURL: ${{ secrets. MMDZZURL }}
+        MMDZZHD: ${{ secrets. MMDZZHD }}      
         TZ: Asia/shanghai
     steps:
       - name: Checkout
@@ -26,10 +26,10 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【春风赚】'
-        if: env.CFZ_HD
+      - name: '运行 【萌喵】'
+        if: env. MMDZZHD
         run: |
-          node Task/cfz.js
+          node Task/mmdzz.js
         env:
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
