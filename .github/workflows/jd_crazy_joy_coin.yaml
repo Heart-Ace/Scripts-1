@@ -35,7 +35,7 @@ jobs:
           - name: '运行 【京东疯狂JOY挂机】'
             run: |
               cd ~/Scripts
-              node jd_crazy_joy_coin.js
+              node Task/jd_crazy_joy_coin.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
