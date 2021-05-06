@@ -23,7 +23,7 @@ hostname = bp-api.coohua.com
 const $ = new Env('快乐猜歌无限刷');
 let status;
 status = (status = ($.getval("ygkcstatus") || "1") ) > 1 ? `${status}` : ""; // 账号扩展字符
-const ygkcurlArr = [], ygkchdArr = [],ygkccount = ''
+const ygkcurlArr = ['coin=8&device=ios&double=0&imei=97c2fc699763910db446e0b75898babc69cc34a6&source=ios&uid=1286210&version=1.0.7'], ygkchdArr = ['{"Cookie":"PHPSESSID=f0c93d821a83fe7ff03e28a701655c23; sleep_zouluzhuan=sleep181","Accept":"*/*","Connection":"keep-alive","Content-Type":"application/x-www-form-urlencoded","Accept-Encoding":"gzip, deflate","Host":"sleep.zouluzhuan.com","User-Agent":"SMMon/1.0.7 (iPhone; iOS 13.5; Scale/3.00)","Content-Length":"109","Accept-Language":"zh-Hans-CN;q=1"}'],ygkccount = ''
 let num = ($.getval('num') || 5) //循环体
 let times = Math.round(Date.now() / 1000)
 let ygkcurl = $.getdata('ygkcurl')
