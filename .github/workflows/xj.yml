@@ -32,7 +32,7 @@ jobs:
           npm install
       - name: '运行 【京东夏季】'
         run: |
-          node Task/jd_summer.js
+          node Task/jd_summer_movement
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
